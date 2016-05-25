@@ -42,10 +42,10 @@ if(connectToDatabase()) {
 
     $posts = fetchAllRecords();
 
-    if(empty($posts)) {
-        header('Location: series.php');
-        exit(0);
-    }
+//    if(empty($posts)) {
+//        header('Location: series.php');
+//        exit(0);
+//    }
 }
 ?>
 <!DOCTYPE html>
@@ -134,6 +134,11 @@ if(connectToDatabase()) {
                     <div class="panel-body">
                         <div class="panel-info text-center">
                             <h3><?= $posts[0]['topic_name']; ?></h3>
+                                <?php
+                                if(isset($posts[0]['topic_name'])) { ?>
+                                <?php
+                                }
+                                ?>
                         </div>
                     </div>
                 </div>
